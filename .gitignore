@@ -24,3 +24,4 @@ OSXARM64/
 *.dof
 *.cfg
 *.res
+config.ini

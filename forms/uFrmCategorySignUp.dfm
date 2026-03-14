@@ -1,6 +1,7 @@
 object frmCategorySignUp: TfrmCategorySignUp
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'frmCategorySignUp'
   ClientHeight = 442
   ClientWidth = 628

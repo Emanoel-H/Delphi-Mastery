@@ -26,6 +26,6 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Windows11 Dark');
   Application.CreateForm(TDataModule1, DataModule1);
-  Application.CreateForm(TfrmCategorySignUp, frmCategorySignUp);
+  Application.CreateForm(TfrmProductsSignUp, frmProductsSignUp);
   Application.Run;
 end.

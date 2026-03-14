@@ -10,12 +10,9 @@ object DataModule1: TDataModule1
   object FDConnection: TFDConnection
     Params.Strings = (
       'DriverID=PG'
-      'Server=localhost'
-      'User_Name=postgres'
-      'Password=82551210Delphi.'
       'Database=db_ace_DelphiMastery')
-    Connected = True
     LoginPrompt = False
+    BeforeConnect = FDConnectionBeforeConnect
     Left = 624
     Top = 360
   end
