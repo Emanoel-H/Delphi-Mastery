@@ -1,0 +1,26 @@
+# Project-specific binaries and history
+__history/
+__recovery/
+*.dcu
+*.~*
+*.local
+*.identcache
+*.projdata
+*.tvsconfig
+*.stat
+
+# Build Outputs
+Win32/
+Win64/
+Android/
+Android64/
+iOSDevice64/
+iOSSimARM64/
+OSX64/
+OSXARM64/
+
+# User-specific settings
+*.dsk
+*.dof
+*.cfg
+*.res
