@@ -364,6 +364,7 @@ object frmProductsSearching: TfrmProductsSearching
     object fdqProductsprice: TFloatField
       FieldName = 'price'
       Origin = 'price'
+      currency = True
     end
     object fdqProductscategory: TWideStringField
       AutoGenerateValue = arDefault

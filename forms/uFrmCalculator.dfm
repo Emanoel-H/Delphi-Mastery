@@ -4,8 +4,8 @@ object frmCalculator: TfrmCalculator
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Let'#39's Calculate'
-  ClientHeight = 419
-  ClientWidth = 472
+  ClientHeight = 410
+  ClientWidth = 466
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,15 +17,13 @@ object frmCalculator: TfrmCalculator
   object pnMain: TPanel
     Left = 0
     Top = 56
-    Width = 472
-    Height = 363
+    Width = 466
+    Height = 354
     Align = alClient
     Color = 15850149
     Enabled = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 466
-    ExplicitHeight = 354
     object lblValue1: TLabel
       Left = 16
       Top = 25
@@ -91,14 +89,13 @@ object frmCalculator: TfrmCalculator
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 472
+    Width = 466
     Height = 56
     ButtonHeight = 56
     ButtonWidth = 64
     Caption = 'ToolBar1'
     Images = DataModule1.VirtualImageList1
     TabOrder = 1
-    ExplicitWidth = 466
     object btnBack: TToolButton
       Left = 0
       Top = 0

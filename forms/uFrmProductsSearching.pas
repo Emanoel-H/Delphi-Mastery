@@ -76,13 +76,14 @@ end;
 
 procedure TfrmProductsSearching.btnConfirmClick(Sender: TObject);
 begin
-  if (frmProductsSignUp = nil) and not (fdqProducts.IsEmpty) then
+  if (frmProductsSignUp <> nil) and not (fdqProducts.IsEmpty) then
   begin
     Product.Id            := dbgProducts.DataSource.DataSet.FieldByName('id').AsInteger;
     Product.Code          := dbgProducts.DataSource.DataSet.FieldByName('code').AsString;
     Product.Name          := dbgProducts.DataSource.DataSet.FieldByName('name').AsString;
     Product.Category.Id   := dbgProducts.DataSource.DataSet.FieldByName('category_id').AsInteger;
     Product.Category.Name := dbgProducts.DataSource.DataSet.FieldByName('category').AsString;
+    Product.Price         := dbgProducts.DataSource.DataSet.FieldByName('price').AsCurrency;
 
     frmProductsSignUp.setProduct(Product);
     Close;
@@ -114,7 +115,7 @@ begin
     dbgProducts.Canvas.Font.Color := clWhite;
   end
 
-    else if dbgProducts.DataSource.DataSet.RecNo mod 2 = 0 then
+  else if dbgProducts.DataSource.DataSet.RecNo mod 2 = 0 then
   begin
     dbgProducts.Canvas.Brush.Color := $00673AB7;
   end;
@@ -136,7 +137,7 @@ begin
     ProductsDAO.Free;
     Product.Free;
   finally
-    Action            := caFree;
+    Action               := caFree;
     frmProductsSearching := nil;
   end;
 end;
@@ -146,13 +147,13 @@ begin
   ProductsDAO := TProductsDAO.Create;
   Product     := TProduct.Create;
 
-  dbgProducts.Color := clBlack;
-  dbgProducts.FixedColor := $00202020;
-  dbgProducts.Font.Color := clWhite;
+  dbgProducts.Color           := clBlack;
+  dbgProducts.FixedColor      := $00202020;
+  dbgProducts.Font.Color      := clWhite;
   dbgProducts.TitleFont.Color := clWhite;
   dbgProducts.TitleFont.Style := [fsBold];
-  dbgProducts.DrawingStyle := gdsClassic;
-  dbgProducts.ParentColor := False;
+  dbgProducts.DrawingStyle    := gdsClassic;
+  dbgProducts.ParentColor     := False;
 end;
 
 procedure TfrmProductsSearching.FormShow(Sender: TObject);

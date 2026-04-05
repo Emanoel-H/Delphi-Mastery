@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Vcl.DBCtrls, Vcl.NumberBox, Data.DB, ProductsDAO, Product, FireDAC.DApt, uFrmProductsSearching;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.NumberBox, Data.DB, ProductsDAO, Product, FireDAC.DApt, uFrmProductsSearching, uFrmCategorySignUp;
 
 type
   TfrmProductsSignUp = class(TForm)
@@ -26,6 +26,7 @@ type
     Label1: TLabel;
     nbPrice: TNumberBox;
     btnSearch: TToolButton;
+    btnCategories: TToolButton;
     procedure btnBackClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnConfirmClick(Sender: TObject);
@@ -39,6 +40,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure edtCodeKeyPress(Sender: TObject; var Key: Char);
     procedure btnSearchClick(Sender: TObject);
+    procedure btnCategoriesClick(Sender: TObject);
   private
     { Private declarations }
     ProductsDAO: TProductsDAO;
@@ -92,11 +94,22 @@ begin
   CancelControl;
 end;
 
+procedure TfrmProductsSignUp.btnCategoriesClick(Sender: TObject);
+begin
+  if frmCategorySignUp = nil then
+  begin
+    frmCategorySignUp := TfrmCategorySignUp.Create(Self);
+    frmCategorySignUp.ShowModal;
+  end;
+end;
+
 procedure TfrmProductsSignUp.btnConfirmClick(Sender: TObject);
 begin
-  if (edtCode.Text = '') or (edtName.Text = '') or
-     (nbPrice.Text = '') or (nbPrice.Value = 0) then
-      raise Exception.Create('A product must have a code, name and price!');
+  if (edtCode.Text = '') or (edtName.Text = '') or (nbPrice.Text = '') or (nbPrice.Value = 0) then
+  begin
+    Application.MessageBox('A product must have a code, name and price!', 'Attention', MB_OK + MB_ICONERROR);
+    Abort;
+  end;
 
   if bAdd then
   begin
@@ -141,6 +154,7 @@ begin
   begin
     frmProductsSearching := TfrmProductsSearching.Create(Self);
     frmProductsSearching.ShowModal;
+    SearchControl;
   end;
 end;
 
@@ -228,8 +242,8 @@ begin
   btnDelete.Enabled   := true;
   btnSearch.Enabled   := false;
   btnCancel.Enabled   := true;
-  btnConfirm.Enabled  := true;
-  pnMain.Enabled      := true;
+  btnConfirm.Enabled  := false;
+  pnMain.Enabled      := false;
 end;
 
 procedure TfrmProductsSignUp.setProduct(AProduct: TProduct);
@@ -243,7 +257,7 @@ begin
 
   edtCode.Text         := Product.Code;
   edtName.Text         := Product.Name;
-  nbPrice.Text         := Product.Price.ToString;
+  nbPrice.Value        := Product.Price;
   dblCategory.KeyValue := Product.Category.Id;
 end;
 

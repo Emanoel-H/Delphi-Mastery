@@ -17,7 +17,6 @@ type
     procedure addProduct(Product: TProduct);
     procedure updateProduct(Product: TProduct);
     function getProducts(Product: TProduct): TFDQuery;
-    function getProductExists(Category: TCategory): boolean;
     function listCategories: TDataSource;
   end;
 implementation
@@ -69,33 +68,6 @@ begin
   finally
     fSet.Close;
     fSet.Free;
-  end;
-end;
-
-function TProductsDAO.getProductExists(Category: TCategory): boolean;
-var
-  sSQL: string;
-  fGet: TFDQuery;
-  bExists: boolean;
-begin
-  fGet := TFDQuery.Create(nil);
-  try
-    fGet.Connection := DataModule1.FDConnection;
-
-    sSQL :=
-    'select id                                         '+
-    'from products                                     '+
-    'where category_id = '''+Category.Id.ToString+'''; ';
-
-    fGet.Close;
-    fGet.SQL.Clear;
-    fGet.SQL.Text := sSQL;
-    fGet.Open;
-
-    Result := not (fGet.IsEmpty);
-  finally
-    fGet.Close;
-    fGet.Free;
   end;
 end;
 

@@ -4,8 +4,8 @@ object frmHelloWorld: TfrmHelloWorld
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Hello, World!'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 433
+  ClientWidth = 622
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,14 +17,12 @@ object frmHelloWorld: TfrmHelloWorld
   object pnPrincipal: TPanel
     Left = 0
     Top = 0
-    Width = 628
-    Height = 442
+    Width = 622
+    Height = 433
     Align = alClient
     Color = 15850149
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 622
-    ExplicitHeight = 433
     object lblNome: TLabel
       Left = 16
       Top = 15

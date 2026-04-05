@@ -17,7 +17,9 @@ uses
   ProductsDAO in 'DAO\ProductsDAO.pas',
   Vcl.Themes,
   Vcl.Styles,
-  uFrmCategorySignUp in 'forms\uFrmCategorySignUp.pas' {frmCategorySignUp};
+  uFrmCategorySignUp in 'forms\uFrmCategorySignUp.pas' {frmCategorySignUp},
+  CategoriesDAO in 'DAO\CategoriesDAO.pas',
+  uFrmCategoriesSearching in 'forms\uFrmCategoriesSearching.pas' {frmCategoriesSearching};
 
 {$R *.res}
 

@@ -76,7 +76,10 @@ var
   iValue1, iValue2, iIndex, iResult: integer;
 begin
   if edtValue1.Text = '' then
-    raise Exception.Create('Type a number to start an operation!');
+  begin
+    Application.MessageBox('Type a number to start an operation!', 'Attention', MB_OK + MB_ICONERROR);
+    Abort;
+  end;
 
   iValue1 := StrToIntDef(edtValue1.Text, 0);
 

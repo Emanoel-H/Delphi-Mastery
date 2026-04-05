@@ -5,7 +5,7 @@ object frmProductsSignUp: TfrmProductsSignUp
   BorderStyle = bsSingle
   Caption = 'Products'
   ClientHeight = 442
-  ClientWidth = 475
+  ClientWidth = 540
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object frmProductsSignUp: TfrmProductsSignUp
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 475
+    Width = 540
     Height = 56
     ButtonHeight = 62
     ButtonWidth = 67
@@ -35,7 +35,7 @@ object frmProductsSignUp: TfrmProductsSignUp
     ParentColor = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 469
+    ExplicitWidth = 534
     object btnBack: TToolButton
       Left = 0
       Top = 0
@@ -115,18 +115,29 @@ object frmProductsSignUp: TfrmProductsSignUp
       ShowHint = True
       OnClick = btnConfirmClick
     end
+    object btnCategories: TToolButton
+      Left = 469
+      Top = 0
+      Hint = 'Categories'
+      Caption = 'btnCategories'
+      ImageIndex = 15
+      ImageName = 'app'
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnCategoriesClick
+    end
   end
   object pnMain: TPanel
     Left = 0
     Top = 56
-    Width = 475
+    Width = 540
     Height = 386
     Align = alClient
     Color = clBlack
     Enabled = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 469
+    ExplicitWidth = 534
     ExplicitHeight = 377
     object lblCode: TLabel
       Left = 16
@@ -177,8 +188,8 @@ object frmProductsSignUp: TfrmProductsSignUp
       ParentFont = False
     end
     object Label1: TLabel
-      Left = 16
-      Top = 182
+      Left = 288
+      Top = 130
       Width = 60
       Height = 17
       Caption = 'Category:'
@@ -218,8 +229,8 @@ object frmProductsSignUp: TfrmProductsSignUp
       TabOrder = 1
     end
     object dblCategory: TDBLookupComboBox
-      Left = 16
-      Top = 205
+      Left = 288
+      Top = 153
       Width = 145
       Height = 23
       DropDownRows = 10

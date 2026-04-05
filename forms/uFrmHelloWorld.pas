@@ -36,10 +36,16 @@ var
   sName, sAge, sMessage: string;
 begin
   if edtNome.Text = '' then
-    raise Exception.Create('Please enter your name!');
+  begin
+    Application.MessageBox('Please enter your name!', 'Attention', MB_OK + MB_ICONERROR);
+    Abort;
+  end;
 
   if edtNome.Text = '' then
-    raise Exception.Create('Please enter your age!');
+  begin
+    Application.MessageBox('Please enter your age!', 'Attention', MB_OK + MB_ICONERROR);
+    Abort;
+  end;
 
   sName := edtNome.Text;
   sAge  := edtAge.Text;
