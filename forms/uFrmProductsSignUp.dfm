@@ -35,7 +35,7 @@ object frmProductsSignUp: TfrmProductsSignUp
     ParentColor = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 534
+    ExplicitWidth = 536
     object btnBack: TToolButton
       Left = 0
       Top = 0
@@ -137,8 +137,8 @@ object frmProductsSignUp: TfrmProductsSignUp
     Enabled = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 534
-    ExplicitHeight = 377
+    ExplicitWidth = 536
+    ExplicitHeight = 385
     object lblCode: TLabel
       Left = 16
       Top = 25

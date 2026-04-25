@@ -19,7 +19,16 @@ uses
   Vcl.Styles,
   uFrmCategorySignUp in 'forms\uFrmCategorySignUp.pas' {frmCategorySignUp},
   CategoriesDAO in 'DAO\CategoriesDAO.pas',
-  uFrmCategoriesSearching in 'forms\uFrmCategoriesSearching.pas' {frmCategoriesSearching};
+  uFrmCategoriesSearching in 'forms\uFrmCategoriesSearching.pas' {frmCategoriesSearching},
+  Employee in 'Classes\Employee.pas',
+  Person in 'Classes\Person.pas',
+  IRepository in 'Interfaces\IRepository.pas',
+  PostgresRepository in 'Classes\PostgresRepository.pas',
+  CalculatorInterface in 'Interfaces\CalculatorInterface.pas',
+  Calculator in 'Classes\Calculator.pas',
+  User in 'Classes\User.pas',
+  uFrmJsonToObject in 'forms\uFrmJsonToObject.pas' {frmJsonToObject},
+  UserDAO in 'DAO\UserDAO.pas';
 
 {$R *.res}
 
@@ -28,6 +37,6 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Windows11 Dark');
   Application.CreateForm(TDataModule1, DataModule1);
-  Application.CreateForm(TfrmProductsSignUp, frmProductsSignUp);
+  Application.CreateForm(TfrmJsonToObject, frmJsonToObject);
   Application.Run;
 end.

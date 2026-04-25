@@ -152,6 +152,18 @@
             <Form>frmCategoriesSearching</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Classes\Employee.pas"/>
+        <DCCReference Include="Classes\Person.pas"/>
+        <DCCReference Include="Interfaces\IRepository.pas"/>
+        <DCCReference Include="Classes\PostgresRepository.pas"/>
+        <DCCReference Include="Interfaces\CalculatorInterface.pas"/>
+        <DCCReference Include="Classes\Calculator.pas"/>
+        <DCCReference Include="Classes\User.pas"/>
+        <DCCReference Include="forms\uFrmJsonToObject.pas">
+            <Form>frmJsonToObject</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DAO\UserDAO.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
